@@ -1,0 +1,18 @@
+from sklearn.base import BaseEstimator, TransformerMixin
+
+class MyTransformer(BaseEstimator, TransformerMixin):
+    def __init__(self, features, power = 2):
+        self.power = power
+        self.features = features
+        self.scaler = scaler
+    
+    def fit(self, X, y = None):
+        pass
+        return self
+    
+    def transform(self, X):
+        X = dp.PolynomialFeatures_labeled(X, self.power).drop(['Constant Term'], axis = 1)
+        return X[self.features]
+
+
+transformer = make_pipeline(MyTransformer(new_features), StandardScaler())
